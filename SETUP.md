@@ -216,11 +216,30 @@ in `fr3/`) — open, edit, commit.
 
 ## Changing colors/logo
 
-Colors live at the top of `assets/css/main.css` in a `:root { ... }`
-block — change the hex codes there to re-theme the whole site. The logo
-is `assets/images/logo.svg`, a plain text file you (or I) can edit
-directly, or replace with your own image (update the `<img>` reference in
-`_includes/header.html` if you change the filename).
+This site actually carries **two** brands, and pages switch between them
+automatically based on the URL — you don't have to do anything per-page:
+
+- Every page **except** `/fr3/*` uses the **Campbell Parasitology Lab**
+  colors and fonts, set in the `:root { ... }` block near the top of
+  `assets/css/main.css`.
+- Every page **under `/fr3/`** (FR3's overview, resources, and SOPs pages)
+  automatically switches to **FR3's** own colors and fonts, set in the
+  `.fr3-section { ... }` block right below it — this revives FR3's
+  historical navy-and-cyan look. The switch is driven by
+  `_layouts/default.html` checking the page URL, so a new page you create
+  under `fr3/` will pick up FR3's branding automatically.
+
+To re-theme either brand, change the hex codes in the matching block —
+nothing else in the CSS needs to change, since every other rule reads
+color from these variables.
+
+**Logos:** `assets/images/logo.svg` is the lab mark (used everywhere
+except `/fr3/` pages); `assets/images/fr3-logo.svg` is FR3's own mark
+(used only on `/fr3/` pages) — both are plain text files you or I can
+edit directly, or replace with your own images (update the `<img>`
+references in `_includes/header.html` if you change either filename).
+`assets/images/favicon.svg` is the browser-tab icon for the whole site
+(there's only one, since it's one domain).
 
 ## Trying it locally (optional)
 

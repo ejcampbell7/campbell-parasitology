@@ -1,5 +1,19 @@
+{% if page.url contains '/fr3/' %}
+<div class="fr3-strip">
+  <div class="wrap">Part of the <a href="{{ '/' | relative_url }}">Campbell Parasitology Lab</a></div>
+</div>
+{% endif %}
 <header class="site-header">
   <div class="wrap header-inner">
+    {% if page.url contains '/fr3/' %}
+    <a class="site-brand" href="{{ '/fr3/' | relative_url }}">
+      <img src="{{ '/assets/images/fr3-logo.svg' | relative_url }}" alt="" class="brand-mark" width="36" height="36">
+      <span class="brand-text">
+        <span class="brand-title">FR3</span>
+        <span class="brand-sub">Filariasis Research Reagent Resource Center</span>
+      </span>
+    </a>
+    {% else %}
     <a class="site-brand" href="{{ '/' | relative_url }}">
       <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="" class="brand-mark" width="36" height="36">
       <span class="brand-text">
@@ -7,6 +21,7 @@
         <span class="brand-sub">{{ site.institution }}</span>
       </span>
     </a>
+    {% endif %}
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" id="nav-toggle">
       <span class="sr-only">Menu</span>
       <span class="hamburger"></span>

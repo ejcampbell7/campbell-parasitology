@@ -1,22 +1,59 @@
 /* =========================================================
-   Campbell Host-Parasite Interactions Lab — stylesheet
-   Edit colors in the :root block below to re-theme the site.
+   Campbell Parasitology Lab & FR3 — stylesheet
+
+   Two brands, one repo. The lab's own colors and type live in
+   the :root block below. Pages under /fr3/ automatically switch
+   to FR3's own colors and type via the `.fr3-section` block —
+   nothing to do per-page, it's driven by the URL (see
+   _includes/header.html and _layouts/default.html).
+
+   To re-theme: change the hex values in :root (lab) or
+   .fr3-section (FR3). Everything else reads from these
+   variables, so a color change here updates the whole site.
    ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap');
+
 :root {
-  --color-ink: #1b2a2e;
-  --color-body: #33484d;
-  --color-bg: #fbfaf7;
+  /* ---- Campbell Parasitology Lab (site default) ---- */
+  --color-ink: #2a1f22;
+  --color-body: #5c4750;
+  --color-bg: #f5f0f1;
   --color-surface: #ffffff;
-  --color-border: #e2ddd0;
-  --color-primary: #1f5f5b;      /* deep teal */
-  --color-primary-dark: #143f3d;
-  --color-accent: #c1622d;       /* warm terracotta accent */
-  --color-accent-soft: #f4e6da;
-  --color-primary-soft: #e7efee;
+  --color-border: #e6dadd;
+  --color-primary: #6b2f42;        /* plum */
+  --color-primary-dark: #4a1f2d;
+  --color-accent: #b9822c;         /* ochre */
+  --color-accent-dark: #8c631f;
+  --color-accent-soft: #f3e8d5;
+  --color-primary-soft: #f0e2e6;
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
   --max-width: 1080px;
   --radius: 10px;
   font-size: 17px;
+}
+
+/* ---- FR3 section: same structure, FR3's own colors + type ---- */
+.fr3-section {
+  --color-ink: #0c2430;
+  --color-body: #3c5a70;
+  --color-bg: #eef4f7;
+  --color-surface: #ffffff;
+  --color-border: #cfe0e8;
+  --color-primary: #0a3b54;        /* navy */
+  --color-primary-dark: #072a3d;
+  --color-accent: #00a0d6;         /* cyan */
+  --color-accent-dark: #0783ab;
+  --color-accent-soft: #dff3fa;
+  --color-primary-soft: #e3edf2;
+
+  --font-display: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -25,25 +62,26 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
   color: var(--color-body);
   background: var(--color-bg);
   line-height: 1.65;
 }
 
 h1, h2, h3, h4 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--font-display);
+  font-weight: 600;
   color: var(--color-ink);
   line-height: 1.2;
   margin-top: 0;
 }
 
-h1 { font-size: 2.1rem; }
+h1 { font-size: 2.1rem; font-weight: 600; }
 h2 { font-size: 1.5rem; margin-bottom: 0.75em; }
 h3 { font-size: 1.15rem; }
 
 a { color: var(--color-primary); }
-a:hover { color: var(--color-accent); }
+a:hover { color: var(--color-accent-dark); }
 
 img { max-width: 100%; }
 
@@ -71,6 +109,19 @@ img { max-width: 100%; }
 }
 .skip-link:focus { left: 0; }
 
+/* Cross-brand strip — shown only on /fr3/ pages, links back to the lab */
+.fr3-strip {
+  background: var(--color-primary-dark);
+  color: #cfe6f0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.45rem 0;
+  text-align: center;
+}
+.fr3-strip a { color: #fff; text-decoration: underline; }
+
 /* Header */
 .site-header {
   background: var(--color-surface);
@@ -96,9 +147,9 @@ img { max-width: 100%; }
 .brand-mark { flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-title {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.05rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 .brand-sub { font-size: 0.78rem; color: var(--color-body); }
 
@@ -127,7 +178,7 @@ img { max-width: 100%; }
   gap: 1.5rem;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
 }
 .site-nav a {
@@ -149,20 +200,20 @@ img { max-width: 100%; }
 }
 .hero-inner { padding: 4rem 1.5rem 3.5rem; }
 .eyebrow {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  color: #cfe4e0;
+  font-size: 0.78rem;
+  color: #e6d3da;
   margin: 0 0 0.75rem;
 }
 .hero h1 { color: #fff; font-size: 2.4rem; max-width: 20ch; }
-.hero-tagline { font-size: 1.15rem; max-width: 55ch; color: #eaf3f1; }
+.hero-tagline { font-size: 1.15rem; max-width: 55ch; color: #f3e9eb; }
 .hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.5rem; }
 
 .btn {
   display: inline-block;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.7rem 1.3rem;
@@ -171,7 +222,7 @@ img { max-width: 100%; }
   border: 1.5px solid transparent;
 }
 .btn-primary { background: var(--color-accent); color: #fff; }
-.btn-primary:hover { background: #a84f22; color: #fff; }
+.btn-primary:hover { background: var(--color-accent-dark); color: #fff; }
 .hero .btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
 .hero .btn-secondary:hover { background: rgba(255,255,255,0.12); color: #fff; }
 .page .btn-secondary { background: var(--color-primary-soft); color: var(--color-primary-dark); border-color: var(--color-primary-soft); }
@@ -194,7 +245,7 @@ img { max-width: 100%; }
   border-bottom: 1px solid var(--color-border);
   vertical-align: top;
 }
-.page-content th { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.page-content th { font-family: var(--font-body); font-weight: 600; }
 .page-content blockquote {
   border-left: 3px solid var(--color-accent);
   margin: 1.5rem 0;
@@ -220,9 +271,9 @@ img { max-width: 100%; }
 }
 .card h3 { color: var(--color-primary-dark); }
 .card p { margin-bottom: 0; font-size: 0.97rem; }
-.section-more { margin-top: 1.25rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.section-more { margin-top: 1.25rem; font-family: var(--font-body); }
 
-/* FR3 callout */
+/* FR3 callout (on lab homepage) */
 .fr3-callout {
   background: var(--color-primary-soft);
   padding: 3rem 1.5rem;
@@ -259,19 +310,19 @@ img { max-width: 100%; }
   border-bottom: 1px solid var(--color-border);
 }
 .pub-list .pub-title { font-weight: 600; color: var(--color-ink); }
-.pub-list .pub-meta { font-size: 0.9rem; color: var(--color-body); }
-.pub-filters { margin: 1rem 0 0.5rem; font-size: 0.9rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.pub-list .pub-meta { font-size: 0.9rem; color: var(--color-body); font-family: var(--font-mono); }
+.pub-filters { margin: 1rem 0 0.5rem; font-size: 0.9rem; font-family: var(--font-body); }
 
 /* News / posts */
 .post-list { list-style: none; padding: 0; }
 .post-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--color-border); }
-.post-list .post-date { font-size: 0.85rem; color: var(--color-body); margin-right: 0.75rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-.post .post-date { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; color: var(--color-accent); }
+.post-list .post-date { font-size: 0.85rem; color: var(--color-body); margin-right: 0.75rem; font-family: var(--font-mono); }
+.post .post-date { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; color: var(--color-accent-dark); }
 
 /* Footer */
 .site-footer {
   background: var(--color-primary-dark);
-  color: #dfeae7;
+  color: #f0e6e9;
   margin-top: 4rem;
   font-size: 0.9rem;
 }
@@ -281,12 +332,15 @@ img { max-width: 100%; }
   gap: 1.5rem;
   padding: 2.5rem 1.5rem 1.5rem;
 }
-.site-footer a { color: #cfe4e0; }
+.site-footer a { color: #e6c9d2; }
 .footer-bottom {
   padding: 1rem 1.5rem 2rem;
   font-size: 0.8rem;
-  color: #9fbcb7;
+  color: #c9a3af;
 }
+.fr3-section .site-footer { color: #dcedf3; }
+.fr3-section .site-footer a { color: #a9d8e8; }
+.fr3-section .footer-bottom { color: #7fa7bc; }
 
 /* Responsive */
 @media (max-width: 720px) {

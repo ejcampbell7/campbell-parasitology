@@ -3,7 +3,7 @@
 <head>
   {% include head.html %}
 </head>
-<body>
+<body{% if page.url contains '/fr3/' %} class="fr3-section"{% endif %}>
   <a class="skip-link" href="#main">Skip to content</a>
   {% include header.html %}
   <main id="main">
