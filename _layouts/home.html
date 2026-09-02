@@ -1,0 +1,67 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">{{ site.institution }} &middot; {{ site.department }}</p>
+    <h1>{{ site.title }}</h1>
+    <p class="hero-tagline">{{ site.tagline }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/research/' | relative_url }}">Explore our research</a>
+      <a class="btn btn-secondary" href="{{ '/fr3/' | relative_url }}">Request FR3 reagents &amp; parasites</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap page">
+  <div class="page-content">
+    {{ content }}
+  </div>
+</div>
+
+<section class="research-grid-section">
+  <div class="wrap">
+    <h2>Research focus</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Canine heartworm</h3>
+        <p><em>Dirofilaria immitis</em> larval development, drug susceptibility, and host establishment.</p>
+      </div>
+      <div class="card">
+        <h3>Lymphatic filariasis</h3>
+        <p>Host-specificity and immune interactions of human-infective filarial parasites.</p>
+      </div>
+      <div class="card">
+        <h3>Canine hookworm</h3>
+        <p>Comparative host-parasite biology and resistance mechanisms in <em>Ancylostoma</em> species.</p>
+      </div>
+    </div>
+    <p class="section-more"><a href="{{ '/research/' | relative_url }}">More about our research &rarr;</a></p>
+  </div>
+</section>
+
+<section class="fr3-callout">
+  <div class="wrap fr3-callout-inner">
+    <div>
+      <h2>We direct FR3</h2>
+      <p>The Filariasis Research Reagent Resource Center (FR3) is an NIH/NIAID-funded resource that supplies living filarial parasites, molecular reagents, and standard protocols to researchers worldwide.</p>
+      <a class="btn btn-primary" href="{{ '/fr3/' | relative_url }}">Learn more &amp; request resources</a>
+    </div>
+  </div>
+</section>
+
+{% assign recent_posts = site.posts | slice: 0, 3 %}
+{% if recent_posts.size > 0 %}
+<section class="wrap news-preview">
+  <h2>Recent news</h2>
+  <ul class="post-list">
+    {% for post in recent_posts %}
+    <li>
+      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="section-more"><a href="{{ '/news/' | relative_url }}">All news &rarr;</a></p>
+</section>
+{% endif %}

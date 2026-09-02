@@ -1,0 +1,301 @@
+/* =========================================================
+   Campbell Host-Parasite Interactions Lab — stylesheet
+   Edit colors in the :root block below to re-theme the site.
+   ========================================================= */
+
+:root {
+  --color-ink: #1b2a2e;
+  --color-body: #33484d;
+  --color-bg: #fbfaf7;
+  --color-surface: #ffffff;
+  --color-border: #e2ddd0;
+  --color-primary: #1f5f5b;      /* deep teal */
+  --color-primary-dark: #143f3d;
+  --color-accent: #c1622d;       /* warm terracotta accent */
+  --color-accent-soft: #f4e6da;
+  --color-primary-soft: #e7efee;
+  --max-width: 1080px;
+  --radius: 10px;
+  font-size: 17px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  color: var(--color-body);
+  background: var(--color-bg);
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--color-ink);
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 { font-size: 2.1rem; }
+h2 { font-size: 1.5rem; margin-bottom: 0.75em; }
+h3 { font-size: 1.15rem; }
+
+a { color: var(--color-primary); }
+a:hover { color: var(--color-accent); }
+
+img { max-width: 100%; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+/* Header */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+.brand-mark { flex-shrink: 0; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.brand-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.brand-sub { font-size: 0.78rem; color: var(--color-body); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+.hamburger, .hamburger::before, .hamburger::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-ink);
+  position: relative;
+}
+.hamburger::before { top: -6px; }
+.hamburger::after { top: 4px; }
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+}
+.site-nav a {
+  text-decoration: none;
+  color: var(--color-ink);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(160deg, var(--color-primary-dark), var(--color-primary) 75%);
+  color: #fff;
+}
+.hero-inner { padding: 4rem 1.5rem 3.5rem; }
+.eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: #cfe4e0;
+  margin: 0 0 0.75rem;
+}
+.hero h1 { color: #fff; font-size: 2.4rem; max-width: 20ch; }
+.hero-tagline { font-size: 1.15rem; max-width: 55ch; color: #eaf3f1; }
+.hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+.btn {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+}
+.btn-primary { background: var(--color-accent); color: #fff; }
+.btn-primary:hover { background: #a84f22; color: #fff; }
+.hero .btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
+.hero .btn-secondary:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.page .btn-secondary { background: var(--color-primary-soft); color: var(--color-primary-dark); border-color: var(--color-primary-soft); }
+
+/* Page */
+.page { padding: 3rem 1.5rem; }
+.page-header { margin-bottom: 1.5rem; }
+.page-subtitle { color: var(--color-body); font-size: 1.1rem; }
+.page-content > *:first-child { margin-top: 0; }
+.page-content h2 { margin-top: 2.2rem; }
+.page-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+.page-content th, .page-content td {
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+.page-content th { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.page-content blockquote {
+  border-left: 3px solid var(--color-accent);
+  margin: 1.5rem 0;
+  padding: 0.25rem 1.25rem;
+  background: var(--color-accent-soft);
+  border-radius: 0 6px 6px 0;
+}
+.back-link { margin-top: 2rem; }
+
+/* Research grid on home */
+.research-grid-section { padding: 3rem 1.5rem; }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+}
+.card h3 { color: var(--color-primary-dark); }
+.card p { margin-bottom: 0; font-size: 0.97rem; }
+.section-more { margin-top: 1.25rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+
+/* FR3 callout */
+.fr3-callout {
+  background: var(--color-primary-soft);
+  padding: 3rem 1.5rem;
+}
+.fr3-callout h2 { color: var(--color-primary-dark); }
+.fr3-callout-inner { max-width: 700px; }
+
+/* People */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+.person-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.person-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: var(--color-primary-soft); }
+.person-card .person-card-body { padding: 1rem 1.1rem; }
+.person-card h3 { font-size: 1.05rem; margin-bottom: 0.15rem; }
+.person-card .role { font-size: 0.88rem; color: var(--color-body); margin: 0; }
+.person-header { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.person-photo { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; }
+
+/* Publications */
+.pub-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+.pub-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.pub-list .pub-title { font-weight: 600; color: var(--color-ink); }
+.pub-list .pub-meta { font-size: 0.9rem; color: var(--color-body); }
+.pub-filters { margin: 1rem 0 0.5rem; font-size: 0.9rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+
+/* News / posts */
+.post-list { list-style: none; padding: 0; }
+.post-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--color-border); }
+.post-list .post-date { font-size: 0.85rem; color: var(--color-body); margin-right: 0.75rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.post .post-date { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; color: var(--color-accent); }
+
+/* Footer */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: #dfeae7;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2.5rem 1.5rem 1.5rem;
+}
+.site-footer a { color: #cfe4e0; }
+.footer-bottom {
+  padding: 1rem 1.5rem 2rem;
+  font-size: 0.8rem;
+  color: #9fbcb7;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .site-nav { display: none; width: 100%; }
+  .site-nav.is-open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 0; padding: 0.5rem 0; }
+  .site-nav a { display: block; padding: 0.6rem 0; }
+  .header-inner { flex-wrap: wrap; }
+  .hero h1 { font-size: 1.9rem; }
+  .footer-inner { grid-template-columns: 1fr; }
+}

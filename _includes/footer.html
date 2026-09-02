@@ -1,0 +1,19 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>{{ site.title }}</strong><br>
+      {{ site.department }}<br>
+      {{ site.institution }}<br>
+      {{ site.address }}
+    </div>
+    <div>
+      <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a><br>
+      <a href="https://orcid.org/{{ site.orcid }}" target="_blank" rel="noopener">ORCID: {{ site.orcid }}</a><br>
+      <a href="{{ '/fr3/' | relative_url }}">FR3 Resource Requests</a><br>
+      <a href="https://github.com/{{ site.github_username | default: 'YOUR-GITHUB-USERNAME' }}/{{ site.repo_name | default: 'YOUR-REPO-NAME' }}">Site source on GitHub</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    &copy; {{ site.time | date: '%Y' }} {{ site.title }}. Built with Jekyll on GitHub Pages.
+  </div>
+</footer>

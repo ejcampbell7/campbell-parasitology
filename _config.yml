@@ -1,0 +1,90 @@
+# ------------------------------------------------------------------
+# Site settings
+# Edit this file to change the site title, tagline, and navigation.
+# ------------------------------------------------------------------
+
+title: "Campbell Parasitology Lab"
+short_title: "Campbell Parasitology Lab"
+tagline: "Understanding how filarial and hookworm parasites establish infection in their hosts"
+description: >-
+  The Campbell Parasitology Lab at the University of Georgia College of
+  Veterinary Medicine studies canine heartworm, lymphatic filariasis, and
+  canine hookworm — and directs the NIH/NIAID Filariasis Research Reagent
+  Resource Center (FR3).
+
+institution: "University of Georgia College of Veterinary Medicine"
+department: "Department of Infectious Diseases"
+pi_name: "Elyssa Campbell, PhD"
+github_username: "ejcampbell7"
+repo_name: "campbell-lab-website"   # update if you name the GitHub repo something else
+contact_email: "ejacob7@uga.edu"
+address: "501 D.W. Brooks Drive, Athens, GA 30602"  # TODO: confirm exact building/room
+orcid: "0000-0003-1096-1510"
+
+url: "https://campbellparasitology.org"
+baseurl: ""
+
+# Top navigation. Add/remove/reorder entries here — no code required.
+nav:
+  - title: "Home"
+    url: /
+  - title: "Research"
+    url: /research/
+  - title: "People"
+    url: /people/
+  - title: "Publications"
+    url: /publications/
+  - title: "FR3"
+    url: /fr3/
+  - title: "News"
+    url: /news/
+  - title: "Contact"
+    url: /contact/
+
+# GitHub Pages builds with these plugins already whitelisted — no local
+# install needed for the site to build on github.com.
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  publications:
+    output: true
+    permalink: /publications/:path/
+  people:
+    output: true
+    permalink: /people/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: "person"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+markdown: kramdown
+permalink: /news/:title/
+
+exclude:
+  - README.md
+  - SETUP.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - scripts/
+  - .github/
