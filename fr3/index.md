@@ -3,6 +3,8 @@ layout: page
 title: FR3 — Filariasis Research Reagent Resource Center
 subtitle: An NIH/NIAID-funded resource center supplying filarial materials to researchers worldwide
 permalink: /fr3/
+hero_image: /assets/images/fr3-mark.svg
+hero_image_alt: FR3 — Filariasis Research Reagent Resource Center
 ---
 
 The **Filariasis Research Reagent Resource Center (FR3)** maintains
