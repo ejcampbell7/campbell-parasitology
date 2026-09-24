@@ -4,23 +4,29 @@ title: People
 permalink: /people/
 ---
 
-<ul class="people-grid">
+<div class="people-group-photo">
+  <img src="{{ '/assets/images/people/lab-group.jpg' | relative_url }}" alt="The Campbell Parasitology Lab">
+</div>
+
+<ul class="people-list">
   {% assign sorted_people = site.people | sort: 'order' %}
   {% for person in sorted_people %}
-  <li class="person-card">
-    {% if person.photo and person.photo.size > 0 %}
-    <img src="{{ person.photo | relative_url }}" alt="Photo of {{ person.title }}" class="person-card-photo">
-    {% endif %}
-    <div class="person-card-body">
-      <h3><a href="{{ person.url | relative_url }}">{{ person.title }}</a></h3>
-      <p class="role">{{ person.role }}</p>
+  <li class="person-entry">
+    <div class="person-entry-header">
+      {% if person.photo and person.photo.size > 0 %}
+      <img src="{{ person.photo | relative_url }}" alt="Photo of {{ person.title }}" class="person-entry-photo">
+      {% endif %}
+      <div>
+        <h3>{{ person.title }}</h3>
+        {% if person.role %}<p class="role">{{ person.role }}</p>{% endif %}
+        {% if person.orcid %}<p class="orcid"><a href="https://orcid.org/{{ person.orcid }}" target="_blank" rel="noopener">ORCID: {{ person.orcid }}</a></p>{% endif %}
+      </div>
     </div>
+    {% if person.content and person.content.size > 0 %}
+    <div class="person-entry-bio">
+      {{ person.content }}
+    </div>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>
-
-<!--
-  TODO (Elyssa): add each lab member as a new file in the _people/
-  folder — see SETUP.md for a copy-paste template. They'll show up here
-  automatically, sorted by the `order` field in each file.
--->
