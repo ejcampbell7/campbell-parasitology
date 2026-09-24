@@ -298,32 +298,29 @@ img { max-width: 100%; }
   margin: 2.5rem 0 0;
   display: flex;
   flex-direction: column;
-  gap: 2.25rem;
+  gap: 2.5rem;
 }
 .person-entry {
-  padding-bottom: 2.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  padding-bottom: 2.5rem;
   border-bottom: 1px solid var(--color-border);
 }
 .person-entry:last-child { border-bottom: none; padding-bottom: 0; }
-.person-entry-header {
-  display: flex;
-  align-items: center;
-  gap: 1.1rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
 .person-entry-photo {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+  width: 180px;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  border-radius: var(--radius);
   flex-shrink: 0;
   background: var(--color-primary-soft);
 }
-.person-entry-header h3 { font-size: 1.2rem; margin-bottom: 0.15rem; }
-.person-entry-header .role { font-size: 0.9rem; color: var(--color-body); margin: 0; }
-.person-entry-header .orcid { font-size: 0.85rem; margin: 0.15rem 0 0; }
-.person-entry-bio { font-size: 0.97rem; max-width: 70ch; }
+.person-entry-body { min-width: 0; }
+.person-entry-body h3 { font-size: 1.2rem; margin-bottom: 0.15rem; }
+.person-entry-body .role { font-size: 0.9rem; color: var(--color-body); margin: 0; }
+.person-entry-body .orcid { font-size: 0.85rem; margin: 0.15rem 0 0; }
+.person-entry-bio { font-size: 0.97rem; max-width: 65ch; margin-top: 0.85rem; }
 .person-entry-bio > *:first-child { margin-top: 0; }
 .person-entry-bio > *:last-child { margin-bottom: 0; }
 
