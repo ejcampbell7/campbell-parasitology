@@ -9,7 +9,7 @@ permalink: /people/
   {% for person in sorted_people %}
   <li class="person-card">
     {% if person.photo and person.photo.size > 0 %}
-    <img src="{{ person.photo | relative_url }}" alt="Photo of {{ person.title }}">
+    <img src="{{ person.photo | relative_url }}" alt="Photo of {{ person.title }}" class="person-card-photo">
     {% endif %}
     <div class="person-card-body">
       <h3><a href="{{ person.url | relative_url }}">{{ person.title }}</a></h3>
