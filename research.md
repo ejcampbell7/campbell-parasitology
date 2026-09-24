@@ -26,7 +26,7 @@ regions. We study the host-specificity mechanisms that allow these
 parasites to establish in some hosts and not others, and the role the
 immune system plays in permitting or preventing that establishment.
 
-## Canine hookworm (*Ancylostoma* spp.)
+## Canine hookworm (*Ancylostoma caninum*)
 
 In parallel, we study canine hookworm as a comparative system for
 host-parasite interactions and resistance mechanisms, building a broader
@@ -43,9 +43,6 @@ picture of how blood-feeding nematodes adapt to their hosts.
 - **Alternatives to animal models** — developing advanced *in vitro*
   systems that mimic natural host conditions, to reduce reliance on animal
   models in filarial and hookworm research.
-
-Much of this work is made possible by the parasite materials and protocols
-distributed through **[FR3](/fr3/)**, the resource center our lab directs.
 
 <!--
   TODO (Elyssa): expand this page with specific active projects, funding
