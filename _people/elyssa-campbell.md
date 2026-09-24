@@ -2,7 +2,7 @@
 title: "Elyssa Campbell, PhD"
 role: "Principal Investigator; Director, FR3"
 order: 1
-photo: "# /assets/images/people/elyssa-campbell.jpg"
+photo: "/assets/images/people/elyssa-campbell.jpg"
 orcid: "0000-0003-1096-1510"
 ---
 
