@@ -53,8 +53,7 @@ collections:
     output: true
     permalink: /publications/:path/
   people:
-    output: true
-    permalink: /people/:path/
+    output: false
 
 defaults:
   - scope:
@@ -67,11 +66,6 @@ defaults:
       type: "publications"
     values:
       layout: "publication"
-  - scope:
-      path: ""
-      type: "people"
-    values:
-      layout: "person"
   - scope:
       path: ""
     values:
