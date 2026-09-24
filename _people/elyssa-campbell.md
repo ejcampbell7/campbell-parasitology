@@ -2,7 +2,7 @@
 title: "Elyssa Campbell, PhD"
 role: "Principal Investigator; Director, FR3"
 order: 1
-photo: ""   # e.g. /assets/images/people/elyssa-campbell.jpg — add the file and set this path
+photo: "# /assets/images/people/elyssa-campbell.jpg"
 orcid: "0000-0003-1096-1510"
 ---
 
