@@ -370,10 +370,11 @@ img { max-width: 100%; }
   .site-nav.is-open { display: block; }
   .site-nav ul { flex-direction: column; gap: 0; padding: 0.5rem 0; }
   .site-nav a { display: block; padding: 0.6rem 0; }
-  .header-inner { flex-wrap: wrap; }
+  .header-inner { flex-wrap: wrap; }  
   .hero h1 { font-size: 1.9rem; }
   .footer-inner { grid-template-columns: 1fr; }
   .person-entry { flex-direction: column; }
   .person-entry-photo { width: 100%; max-width: 260px; }
+}
 }
 }
