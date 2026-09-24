@@ -373,4 +373,7 @@ img { max-width: 100%; }
   .header-inner { flex-wrap: wrap; }
   .hero h1 { font-size: 1.9rem; }
   .footer-inner { grid-template-columns: 1fr; }
+  .person-entry { flex-direction: column; }
+  .person-entry-photo { width: 100%; max-width: 260px; }
+}
 }
