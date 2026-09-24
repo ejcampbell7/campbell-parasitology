@@ -12,8 +12,7 @@ Medicine. She earned her PhD in Comparative Biomedical Sciences from the
 University of Georgia in 2024. Her lab studies host-parasite interactions
 across canine heartworm, lymphatic filariasis, and canine hookworm, with a
 focus on host specificity, immune interactions, and drug resistance. She
-also directs FR3, the NIH/NIAID Filariasis Research Reagent Resource
-Center.
+also directs the Filariasis Research Reagent Resource Center (FR3).
 
 She is an active member of the American Heartworm Society and a former
 Executive Committee member of the American Association of Veterinary
